@@ -1,14 +1,35 @@
-<div class="container mt-5">
-    <a href="../works/create"> Create New Post</a>
-    @foreach ($posts as $post)
-    <h1>
-        <a href="">{{ $post->title }}</a></h1><p><a href="/works/{{ $post->id }}/edit">edit</a> - <a href="">delete</a></p>
-    {{-- <p>{{ $post->category }}</p>
-    <h2>The Challenge</h2>
-    <p>{{ $post->challenge }}</p>
-    <h2>Our Approach</h2>
-    <p>{{ $post->approach }}</p>
-    <h2>The Result</h2>
-    <p>{{ $post->result }}</p> --}}
-    @endforeach
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite('resources/css/app.css')
+    <title>SIPS Digital Creative</title>
+</head>
+<body>
+
+<div>
+    <div>
+        <a href="../works/create"> Create New Post</a>
+        @foreach ($posts as $post)
+        <h1 class="text-4xl font-bold">
+            <a href="">{{ $post->title }}</a></h1><p><a href="/works/{{ $post->id }}/edit">edit</a></p>
+                <form action="/works/{{ $post->id }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="delete">
+                </form>
+        {{-- <p>{{ $post->category }}</p>
+        <h2>The Challenge</h2>
+        <p>{{ $post->challenge }}</p>
+        <h2>Our Approach</h2>
+        <p>{{ $post->approach }}</p>
+        <h2>The Result</h2>
+        <p>{{ $post->result }}</p> --}}
+        @endforeach
+    </div>
 </div>
+
+</body>
+</html>

@@ -36,4 +36,11 @@ class PostController extends Controller
         $posts->update($request->except(['_token','submit']));
         return redirect('/works');
     }
+
+    public function destroy($id)
+    {
+        $posts = Post::find($id);
+        $posts->delete();
+        return redirect('/works');
+    }
 }

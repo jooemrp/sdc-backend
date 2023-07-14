@@ -22,5 +22,5 @@ Route::get('/works', [PostController::class, 'index']);
 Route::get('/works/create', [PostController::class, 'create']);
 Route::get('/works/{id}/edit', [PostController::class, 'edit']);
 Route::put('/works/{id}', [PostController::class, 'update']);
-Route::get('/works/{id}/delete', [PostController::class, 'delete']);
+Route::delete('/works/{id}', [PostController::class, 'destroy']);
 Route::post('/works/save', [PostController::class, 'save']);
