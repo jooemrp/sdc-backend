@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css')
-    <title>SIPS Digital Creative</title>
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
 <div>
     <div>
         <a href="../works/create"> Create New Post</a>
@@ -20,16 +11,14 @@
                     @method('delete')
                     <input type="submit" value="delete">
                 </form>
-        {{-- <p>{{ $post->category }}</p>
+        <p>{{ $post->category }}</p>
         <h2>The Challenge</h2>
         <p>{{ $post->challenge }}</p>
         <h2>Our Approach</h2>
         <p>{{ $post->approach }}</p>
         <h2>The Result</h2>
-        <p>{{ $post->result }}</p> --}}
+        <p>{{ $post->result }}</p>
         @endforeach
     </div>
 </div>
-
-</body>
-</html>
+@endsection
