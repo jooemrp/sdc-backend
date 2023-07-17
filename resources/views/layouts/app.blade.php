@@ -8,8 +8,12 @@
     <title>SIPS Digital Creative</title>
 </head>
 <body>
-@include('layouts.header')
-@yield('content')
-@include('layouts.footer')
+    <div class="flex flex-col h-screen">
+        @include('layouts.header')
+        <div class="flex-grow">
+            @yield('content')
+        </div>
+        @include('layouts.footer')
+    </div>
 </body>
 </html>
