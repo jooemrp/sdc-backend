@@ -9,7 +9,10 @@ export default {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    require("@tailwindcss/forms")({
+        strategy: 'base', // only generate global styles
+        // strategy: 'class',
+      }),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/container-queries'),

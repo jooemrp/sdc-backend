@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container mx-auto">
-    <div class="mb-5 mx-5 flex justify-between">
+    <div class="my-10 mx-5 flex justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl mt-5 mr-5 text-xl">
             <a href="../works/create"> Create New Post</a>
         </button>
