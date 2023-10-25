@@ -51,6 +51,8 @@ class PostController extends Controller
         $posts = Post::find($id);
         $posts->update($request->except(['_token', 'submit']));
 
+        // TO DO: create upload multiple images for the works content
+
         return redirect()->route('admin.works.index');
     }
 
