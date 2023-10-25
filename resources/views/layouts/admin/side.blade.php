@@ -33,9 +33,9 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav ">
 
-                {{-- @if(auth()->user()->hasRole(['admin','superadmin'])) --}}
+                @if(auth()->user()->hasRole(['admin','superadmin']))
                 @include('layouts.admin.menu')
-                {{-- @endif --}}
+                @endif
 
             </ul>
             <!--end::Menu Nav-->
