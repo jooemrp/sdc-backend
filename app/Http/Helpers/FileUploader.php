@@ -17,4 +17,15 @@ class FileUploader
 
         return $model;
     }
+
+    public static function uploadMultiple($model, $collection, $from_requests = [])
+    {
+        $fileAdders = $model
+            ->addMultipleMediaFromRequest($from_requests, 's3')
+            ->each(function ($fileAdder) use ($collection) {
+                $fileAdder->toMediaCollection($collection, 's3');
+            });
+
+        return $model;
+    }
 }
