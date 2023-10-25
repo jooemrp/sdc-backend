@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,6 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/works', [PostController::class, 'index']);
-Route::get('/works/create', [PostController::class, 'create']);
-Route::get('/works/{id}/edit', [PostController::class, 'edit']);
-Route::put('/works/{id}', [PostController::class, 'update']);
-Route::delete('/works/{id}', [PostController::class, 'destroy']);
-Route::post('/works/save', [PostController::class, 'save']);
 
 
 Route::group([
@@ -40,6 +35,15 @@ Route::group([
 ], function () {
 
     Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
+
+    Route::get('/works', [PostController::class, 'index']);
+    Route::get('/works/create', [PostController::class, 'create']);
+    Route::get('/works/{id}/edit', [PostController::class, 'edit']);
+    Route::put('/works/{id}', [PostController::class, 'update']);
+    Route::delete('/works/{id}', [PostController::class, 'destroy']);
+    Route::post('/works/save', [PostController::class, 'save']);
+
+    // Route::resource('works', App\Http\Controllers\PostController::class);
 
     Route::get('/user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('user.create');
