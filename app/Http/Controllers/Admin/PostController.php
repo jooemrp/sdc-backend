@@ -37,9 +37,7 @@ class PostController extends Controller
             $post->update(['img_url' => $post->getFirstMediaUrl('Thumbnail') ?? '']);
         }
 
-        dd($post);
-
-        return redirect('/works');
+        return redirect()->route('admin.works.index');
     }
 
     public function edit($id)
@@ -52,13 +50,15 @@ class PostController extends Controller
     {
         $posts = Post::find($id);
         $posts->update($request->except(['_token', 'submit']));
-        return redirect('/works');
+
+        return redirect()->route('admin.works.index');
     }
 
     public function destroy($id)
     {
         $posts = Post::find($id);
         $posts->delete();
-        return redirect('/works');
+
+        return redirect()->route('admin.works.index');
     }
 }
