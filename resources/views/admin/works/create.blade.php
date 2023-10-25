@@ -1,31 +1,38 @@
-@extends('layouts.app')
-@section('content')
-<div class="flex justify-center">
-   <h1 class="text-2xl font-bold my-5"> CREATE POST</h1>
-</div>
-<div class="mx-auto w-2/4">
-    <form action="/works/save" method="POST" class="grid grid-cols-1 mb-5">
-        @csrf
-        <h2 class="text-2xl font-semibold my-5">Title</h2>
-        <input type="text" name="title" placeholder="Title"><br>
-        <h2 class="text-2xl font-semibold my-5">Category</h2>
-        <select name="category">
-            <option value="">ChooseCategory</option>
-            <option value="Content Creation">Content Creation</option>
-            <option value="Paid Marketing">Paid Marketing</option>
-            <option value="Content Marketing">Content Marketing</option>
-        </select><br>
-        <h2 class="text-2xl font-semibold my-5">The Challenge</h2>
-        <textarea name="challenge" rows="10" placeholder="Challenge"></textarea><br>
-        <h2 class="text-2xl font-semibold my-5">Our Approach</h2>
-        <textarea name="approach" rows="10" placeholder="Approach"></textarea><br>
-        <h2 class="text-2xl font-semibold my-5">The Result</h2>
-        <textarea name="result" rows="10" placeholder="Result"></textarea><br>
-        <button class="mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-1/5 rounded-xl text-xl pb">
-            <input type="submit" name="submit" value="Save">
-        </button>
-    </form>
+@extends('layouts.admin.app')
 
+@push('sub_title_page')
+<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+    <li class="breadcrumb-item text-muted">
+        <a href="" class="text-muted">Form</a>
+    </li>
+    <li class="breadcrumb-item text-muted">
+        <a href="" class="text-muted">Create</a>
+    </li>
+</ul>
+@endpush
+
+@section('content')
+<div class="card card-custom card-sticky" id="kt_page_sticky_card">
+    <div class="card-header">
+        <h3 class="card-title">{{ trans('admin.crud.create') }} Works</h3>
+        <div class="card-toolbar">
+            <a href="{{ route('admin.works.index') }}" class="btn btn-light-primary font-weight-bolder mr-2">
+                <i class="ki ki-long-arrow-back icon-xs"></i>Back</a>
+            <div class="btn-group">
+                <button type="button" onclick="formSubmit()" class="btn btn-primary font-weight-bolder">
+                    <i class="ki ki-check icon-xs"></i>Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--begin::Form-->
+    <form class="form" action="{{ route('admin.works.store') }}" method="POST" enctype="multipart/form-data" id="kt_form">
+        @csrf
+        <div class="card-body">
+            @include('admin.works.fields')
+        </div>
+    </form>
+    <!--end::Form-->
 </div>
 @endsection
-

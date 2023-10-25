@@ -20,7 +20,7 @@
     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 </li>
 <li class="menu-item menu-item {{ Request::is('admin/medicalnote*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
-    <a href="#" class="menu-link">
+    <a href="{{ route('admin.works.index') }}" class="menu-link">
         <span class="svg-icon menu-icon">
             <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\legacy\metronic\theme\html\demo1\dist/../src/media/svg/icons\Communication\Archive.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

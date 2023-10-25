@@ -4,10 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Post extends Model
+class Post extends Model implements HasMedia
 {
-    use HasFactory;
-    // protected $fillable = ['title', 'category']
+    use HasFactory, InteractsWithMedia;
+
+    protected $fillable = ['id', 'title', 'category', 'challenge', 'approach', 'result', 'img_url'];
+
+
     protected $guarded = [];
 }

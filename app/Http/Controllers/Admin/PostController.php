@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Post;
+use App\Http\Controllers\Controller;
+use App\Http\Helpers\FileUploader;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -18,17 +20,32 @@ class PostController extends Controller
         return view('admin.works.create');
     }
 
-    public function save(Request $request)
+    public function store(Request $request)
     {
-        // dd($request->except(['_token','submit']));
-        Post::create($request->except(['_token', 'submit']));
+        $input = $request->all();
+
+        $post = Post::create([
+            'title' => $input['title'],
+            'category' => $input['category'],
+            'challenge' => $input['challenge'],
+            'approach' => $input['approach'],
+            'result' => $input['result'],
+        ]);
+
+        if (!is_null($request->file('thumbnail'))) {
+            FileUploader::upload($post, "Thumbnail", "thumbnail", 'store');
+            $post->update(['img_url' => $post->getFirstMediaUrl('Thumbnail') ?? '']);
+        }
+
+        dd($post);
+
         return redirect('/works');
     }
 
     public function edit($id)
     {
-        $posts = Post::find($id);
-        return view('admin.works.edit', compact(['posts']));
+        $data = Post::find($id);
+        return view('admin.works.edit', compact('data'));
     }
 
     public function update($id, Request $request)

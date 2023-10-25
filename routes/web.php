@@ -22,12 +22,12 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/works', [PostController::class, 'index']);
-Route::get('/works/create', [PostController::class, 'create']);
-Route::get('/works/{id}/edit', [PostController::class, 'edit']);
-Route::put('/works/{id}', [PostController::class, 'update']);
-Route::delete('/works/{id}', [PostController::class, 'destroy']);
-Route::post('/works/save', [PostController::class, 'save']);
+// Route::get('/works', [PostController::class, 'index']);
+// Route::get('/works/create', [PostController::class, 'create']);
+// Route::get('/works/{id}/edit', [PostController::class, 'edit']);
+// Route::put('/works/{id}', [PostController::class, 'update']);
+// Route::delete('/works/{id}', [PostController::class, 'destroy']);
+// Route::post('/works/save', [PostController::class, 'save']);
 
 
 Route::group([
@@ -41,7 +41,7 @@ Route::group([
 
     Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
-    // Route::resource('works', App\Http\Controllers\PostController::class);
+    Route::resource('works', App\Http\Controllers\Admin\PostController::class);
 
     Route::get('/user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('user.create');
