@@ -2,7 +2,7 @@
     <table class="table table-separate table-head-custom collapsed" id="kt_datatable">
         <thead>
             <tr>
-                <th>NO</th>
+                <th style="width: 20px;">NO</th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>Actions</th>
