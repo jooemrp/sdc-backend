@@ -215,6 +215,7 @@ class ContentController extends Controller
                                     <li class="nav-item">
                                         <form id="formDelete[' . $content->id . ']" method="POST" action="' . route('admin.content.destroy', $content->id) . '">
                                         ' . csrf_field() . '
+                                            <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="id" value="' . $content->id . '">
                                         </form>
                                         <a class="nav-link deleteButton" onclick="deleteFunction(' . $content->id . ')">

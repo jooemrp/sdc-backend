@@ -43,6 +43,7 @@
 
     <form action="{{ route('admin.content.update', $data->id) }}" method="POST" enctype="multipart/form-data" id="kt_form">
         @csrf
+        @method('PUT')
         <div class="card-body">
             @include('admin.content.fields')
         </div>
