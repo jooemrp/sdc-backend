@@ -11,5 +11,19 @@ class Post extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $fillable = ['id', 'title', 'category', 'challenge', 'approach', 'result', 'img_url', 'color', 'preview'];
+    protected $fillable = ['id', 'title', 'slug', 'category', 'challenge', 'approach', 'result', 'img_url', 'color', 'preview'];
+
+    public static function boot()
+    {
+        parent::boot();
+        date_default_timezone_set("Asia/Makassar");
+        self::creating(function ($model) {
+            $model->created_at = date("Y-m-d H:i:s");
+            $model->updated_at = date("Y-m-d H:i:s");
+        });
+
+        self::updating(function ($model) {
+            $model->updated_at = date("Y-m-d H:i:s");
+        });
+    }
 }

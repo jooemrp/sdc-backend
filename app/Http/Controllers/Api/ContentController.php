@@ -16,7 +16,7 @@ class ContentController extends Controller
     {
         $content = Content::query();
         if ($request->type) {
-            $content = $content->where('type', $type);
+            $content = $content->where('type', $request->type);
         }
         $content = $content->all();
 
@@ -44,7 +44,7 @@ class ContentController extends Controller
      */
     public function show($id)
     {
-        $content = Content::where('id', $id)->orWhere('slug', $id)->get();
+        $content = Content::where('id', $id)->orWhere('slug', $id)->first();
 
         return ContentResource::make($content);
     }
