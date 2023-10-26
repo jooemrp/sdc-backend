@@ -33,7 +33,7 @@
 		<div class="form-group">
 			<label>File </label>
 			<input type="file" onchange="document.getElementById('file-custom-label').innerHTML = this.files[0].name" style="display:none;" id="file-custom" aria-label="File browser example" name="content">
-			<label for="file-custom" type="button" id="file-custom-label" class="btn btn-primary form-control" id="upload">{{ isset($data) ? $data->getFirstMediaUrl('content') : 'Upload' }}</label>
+			<label for="file-custom" type="button" id="file-custom-label" class="btn btn-primary form-control" id="upload">{{ isset($data) ? $data->getFirstMediaUrl('Content') : 'Upload' }}</label>
 		</div>
 	</div> --}}
 </div>
@@ -51,7 +51,7 @@
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="form-group">
 					<label> {{ trans('admin.panel.thumbnail') }} *</label>
-					<div class="image-input image-input-empty image-input-outline" style="background-image: url({{ isset($data) ? $data->getFirstMediaUrl('thumbnail') : '' }});width: 100%;" id="kt_user_edit_avatar">
+					<div class="image-input image-input-empty image-input-outline" style="background-image: url({{ isset($data) ? $data->getFirstMediaUrl('Content_thumbnail') : '' }});width: 100%;" id="kt_user_edit_avatar">
 						<div class="image-input-wrapper" style="height: 220px; width: 100%"></div>
 						<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change Cover">
 							<i class="fa fa-pen icon-sm text-muted"></i>
