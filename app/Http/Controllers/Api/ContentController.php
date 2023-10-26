@@ -18,7 +18,7 @@ class ContentController extends Controller
         if ($request->type) {
             $content = $content->where('type', $request->type);
         }
-        $content = $content->all();
+        $content = $content->get();
 
         return ContentResource::collection($content);
     }
