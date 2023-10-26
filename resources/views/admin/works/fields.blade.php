@@ -16,6 +16,16 @@
         </select>
     </div>
 
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 mb-4">
+        <label>Preview *</label>
+        <textarea name="preview" id="preview" placeholder="Preview" cols="30" rows="3" class="form-control">{{ $data->preview ?? old('preview') }}</textarea>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
+        <label>Color</label>
+        <input type="text" value="{{ $data->color ?? old('color') }}" class="form-control" placeholder="black, sips-navy, sips-maroon, sips-green, sips-orange" name="color" />
+    </div>
+
     <div class="col-12 mb-4">
         <label>Challenge *</label>
         <textarea name="challenge" id="challenge" placeholder="Challenge" cols="30" rows="10" class="form-control">{{ $data->challenge ?? old('challenge') }}</textarea>

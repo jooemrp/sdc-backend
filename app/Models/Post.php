@@ -11,8 +11,5 @@ class Post extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $fillable = ['id', 'title', 'category', 'challenge', 'approach', 'result', 'img_url'];
-
-
-    protected $guarded = [];
+    protected $fillable = ['id', 'title', 'category', 'challenge', 'approach', 'result', 'img_url', 'color', 'preview'];
 }
