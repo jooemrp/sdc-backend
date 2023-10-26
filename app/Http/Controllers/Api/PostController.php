@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\WorkResource;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return response()->json(['data' => $posts], 200);
+        return WorkResource::collection($posts);
     }
 
     /**
@@ -39,7 +40,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return response()->json(['data' => $post], 200);
+        return WorkResource::make($post);
     }
 
     /**
