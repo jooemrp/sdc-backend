@@ -33,8 +33,16 @@ class PostController extends Controller
         ]);
 
         if (!is_null($request->file('thumbnail'))) {
-            FileUploader::upload($post, "Thumbnail", "thumbnail", 'store');
-            $post->update(['img_url' => $post->getFirstMediaUrl('Thumbnail') ?? '']);
+            FileUploader::upload($post, "Work_thumbnail", "thumbnail", 'store');
+            $post->update(['img_url' => $post->getFirstMediaUrl('Work_thumbnail') ?? '']);
+        }
+
+        if (!is_null($request->file('content'))) {
+            if (!is_array($request->file('content'))) {
+                FileUploader::upload($post, "Work_content", 'content', 'store');
+            } else {
+                FileUploader::uploadMultiple($post, "Work_content", ['content'], 'store');
+            }
         }
 
         return redirect()->route('admin.works.index');
@@ -46,14 +54,40 @@ class PostController extends Controller
         return view('admin.works.edit', compact('data'));
     }
 
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
-        $posts = Post::find($id);
-        $posts->update($request->except(['_token', 'submit']));
+        $input = $request->all();
 
-        // TO DO: create upload multiple images for the works content
+        $post = Post::find($id);
+
+        $post->update([
+            'title' => $input['title'],
+            'category' => $input['category'],
+            'challenge' => $input['challenge'],
+            'approach' => $input['approach'],
+            'result' => $input['result'],
+        ]);
+
+        if (!is_null($request->file('thumbnail'))) {
+            FileUploader::upload($post, "Work_thumbnail", "thumbnail", 'update');
+            $post->update(['img_url' => $post->getFirstMediaUrl('Work_thumbnail') ?? '']);
+        }
+
+        if (!is_null($request->file('content'))) {
+            if (!is_array($request->file('content'))) {
+                FileUploader::upload($post, "Work_content", 'content', 'update');
+            } else {
+                FileUploader::uploadMultiple($post, "Work_content", ['content'], 'update');
+            }
+        }
 
         return redirect()->route('admin.works.index');
+    }
+
+    public function show($id)
+    {
+        $data = Post::find($id);
+        return view('admin.works.edit', compact('data'));
     }
 
     public function destroy($id)

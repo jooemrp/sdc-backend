@@ -18,8 +18,12 @@ class FileUploader
         return $model;
     }
 
-    public static function uploadMultiple($model, $collection, $from_requests = [])
+    public static function uploadMultiple($model, $collection, $from_requests = [], $action = 'store')
     {
+        if ($action == 'update') {
+            $model->clearMediaCollection($collection);
+        }
+
         $fileAdders = $model
             ->addMultipleMediaFromRequest($from_requests, 's3')
             ->each(function ($fileAdder) use ($collection) {

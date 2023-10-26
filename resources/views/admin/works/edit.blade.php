@@ -14,7 +14,7 @@
 @section('content')
 <div class="card card-custom card-sticky" id="kt_page_sticky_card">
     <div class="card-header">
-        <h3 class="card-title">{{ trans('admin.crud.create') }} Works</h3>
+        <h3 class="card-title">{{ trans('admin.crud.update') }} Works</h3>
         <div class="card-toolbar">
             <a href="{{ route('admin.works.index') }}" class="btn btn-light-primary font-weight-bolder mr-2">
                 <i class="ki ki-long-arrow-back icon-xs"></i>Back</a>
@@ -29,6 +29,7 @@
     <!--begin::Form-->
     <form class="form" action="{{ route('admin.works.update', $data->id) }}" method="POST" enctype="multipart/form-data" id="kt_form">
         @csrf
+        @method('PUT')
         <div class="card-body">
             @include('admin.works.fields')
         </div>
