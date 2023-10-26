@@ -26,6 +26,7 @@ class PostController extends Controller
 
         $post = Post::create([
             'title' => $input['title'],
+            'slug' => $input['slug'],
             'category' => $input['category'],
             'color' => $input['color'],
             'preview' => $input['preview'],
@@ -64,6 +65,7 @@ class PostController extends Controller
 
         $post->update([
             'title' => $input['title'],
+            'slug' => $input['slug'],
             'category' => $input['category'],
             'color' => $input['color'],
             'preview' => $input['preview'],

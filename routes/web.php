@@ -62,12 +62,14 @@ Route::group([
     Route::get('/user/{id}/subscription', [App\Http\Controllers\Admin\UserController::class, 'subscription'])->name('user.subscription');
     Route::get('/user/{id}/event', [App\Http\Controllers\Admin\UserController::class, 'event'])->name('user.event');
 
-
-
     Route::get('/role/create', [App\Http\Controllers\Admin\RoleController::class, 'create'])->name('role.create');
     Route::post('/role', [App\Http\Controllers\Admin\RoleController::class, 'store'])->name('role.store');
     Route::get('/role/{id}', [App\Http\Controllers\Admin\RoleController::class, 'edit'])->name('role.edit');
     Route::post('/role/update/{id}', [App\Http\Controllers\Admin\RoleController::class, 'update'])->name('role.update');
     Route::post('/role/delete/{id}', [App\Http\Controllers\Admin\RoleController::class, 'destroy'])->name('role.destroy');
     Route::get('/role', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('role.index');
+
+    Route::get('/content/table', [App\Http\Controllers\Admin\ContentController::class, 'table'])->name('content.table');
+    Route::get('/content/selected/{id}', [App\Http\Controllers\Admin\ContentController::class, 'selectedUpdate'])->name('content.selected.update');
+    Route::resource('content', App\Http\Controllers\Admin\ContentController::class);
 });

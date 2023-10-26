@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Content;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\WorkResource;
 
-class PostController extends Controller
+class ContentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = Post::all();
-        return WorkResource::collection($posts);
+        //
     }
 
     /**
@@ -37,16 +34,15 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Content $content)
     {
-        $post = Post::where('id', $id)->orWhere('slug', $id)->first();
-        return WorkResource::make($post);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Content $content)
     {
         //
     }
@@ -54,7 +50,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Content $content)
     {
         //
     }
@@ -62,7 +58,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Content $content)
     {
         //
     }

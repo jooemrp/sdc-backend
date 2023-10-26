@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Post;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\WorkResource;
+use App\Http\Resources\Api\ContentResource;
+use App\Models\Content;
+use Illuminate\Http\Request;
 
-class PostController extends Controller
+class ContentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return WorkResource::collection($posts);
+        $content = Content::query();
+        if ($request->type) {
+            $content = $content->where('type', $request->type);
+        }
+        $content = $content->all();
+
+        return ContentResource::collection($content);
     }
 
     /**
@@ -39,8 +44,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id', $id)->orWhere('slug', $id)->first();
-        return WorkResource::make($post);
+        $content = Content::where('id', $id)->orWhere('slug', $id)->first();
+
+        return ContentResource::make($content);
     }
 
     /**

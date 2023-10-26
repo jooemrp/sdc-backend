@@ -1,9 +1,10 @@
 @csrf
+<input type="hidden" name="slug" id="slug" value="{{ $data->slug ?? old('slug') }}">
 <div class="form-group row">
 
     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mb-4">
         <label>Title *</label>
-        <input type="text" value="{{ $data->title ?? old('title') }}" class="form-control" placeholder="Title" name="title" />
+        <input type="text" value="{{ $data->title ?? old('title') }}" class="form-control" placeholder="Title" name="title" onkeyup="slugChange(this.value)" />
     </div>
 
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
@@ -82,6 +83,9 @@
 <script>
     function formSubmit() {
 		document.getElementById("kt_form").submit();
+	}
+    function slugChange(slug) {
+        document.getElementById("slug").value = slug.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 	}
 </script>
 @endpush
