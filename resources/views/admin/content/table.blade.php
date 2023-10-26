@@ -33,7 +33,7 @@
 
         var table = $('#myDatatable').DataTable({
             order: [
-                [5, "desc"],
+                [4, "desc"],
             ],
             processing: true,
             serverSide: true,
