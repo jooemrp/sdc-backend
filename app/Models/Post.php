@@ -11,7 +11,20 @@ class Post extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
-    protected $fillable = ['id', 'title', 'slug', 'category', 'challenge', 'approach', 'result', 'img_url', 'color', 'preview'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'category',
+        'challenge',
+        'approach',
+        'result',
+        'img_url',
+        'color',
+        'preview',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+    ];
 
     public static function boot()
     {

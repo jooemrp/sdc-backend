@@ -1,6 +1,6 @@
 @csrf
 <input type="hidden" name="slug" id="slug" value="{{ $data->slug ?? old('slug') }}">
-<div class="form-group row">
+<div class="row">
 
     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mb-4">
         <label>Title *</label>
@@ -72,6 +72,29 @@
     </div>
 
 </div>
+
+
+<hr>
+<h4 class="card-title">This is field for optimize SEO</h4>
+
+<div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-3 col-3 text-right">{{ trans('admin.panel.meta.title') }}</label>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-9">
+        <div class="input-group">
+            <input type="text" class="form-control col-9" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.meta.title') }}" name="meta_title" value="{{ $data->meta_title ?? old('meta_title') }}" />
+        </div>
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-3 col-3 text-right">{{ trans('admin.panel.meta.description') }}</label>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-9">
+        <div class="input-group">
+            <input type="text" class="form-control col-9" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.meta.description') }}" name="meta_description" value="{{ $data->meta_description ?? old('meta_description') }}" />
+        </div>
+    </div>
+</div>
+
 
 
 @push('page_style')

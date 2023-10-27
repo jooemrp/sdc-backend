@@ -33,6 +33,8 @@ class PostController extends Controller
             'challenge' => $input['challenge'],
             'approach' => $input['approach'],
             'result' => $input['result'],
+            'meta_title' => $input['meta_title'],
+            'meta_description' => $input['meta_description'],
         ]);
 
         if (!is_null($request->file('thumbnail'))) {
@@ -72,6 +74,8 @@ class PostController extends Controller
             'challenge' => $input['challenge'],
             'approach' => $input['approach'],
             'result' => $input['result'],
+            'meta_title' => $input['meta_title'],
+            'meta_description' => $input['meta_description'],
         ]);
 
         if (!is_null($request->file('thumbnail'))) {
