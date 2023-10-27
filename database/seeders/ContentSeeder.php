@@ -14,6 +14,6 @@ class ContentSeeder extends Seeder
      */
     public function run()
     {
-        // Content::factory()->count(200)->create();
+        Content::factory()->count(25)->create();
     }
 }
