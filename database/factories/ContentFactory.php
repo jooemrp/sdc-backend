@@ -44,7 +44,6 @@ class ContentFactory extends Factory
             'language' => 'id',
             'meta_title' => $faker->title(),
             'meta_description' => $faker->paragraph(),
-            'tags' => [$faker->word(), $faker->word()],
             // 'created_by' => User::all()->random()->id,
             'created_by' => 1,
             'featured_at' => null,
