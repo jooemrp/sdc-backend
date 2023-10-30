@@ -14,6 +14,15 @@ class ContentResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        $data = parent::toArray($request);
+
+        $data['thumbnail'] = $post->getFirstMediaUrl('Content_thumbnail') ?? '';
+
+        $data['contents'] = [];
+        foreach ($this->getMedia('Content') as $content) {
+            $data['contents'][] = $content->getUrl();
+        }
+
+        return $data;
     }
 }
