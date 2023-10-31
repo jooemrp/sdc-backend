@@ -49,6 +49,7 @@ class ContentController extends Controller
     public function show($id)
     {
         $content = Content::where('id', $id)->orWhere('slug', $id)->first();
+        $content->update(['views' =>  $content->views + 1]);
 
         return ContentResource::make($content);
     }
