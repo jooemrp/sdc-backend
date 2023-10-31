@@ -21,7 +21,8 @@ class ContentController extends Controller
         $content = $content
             ->where('status', 1)
             ->orderBy('created_at', 'desc')
-            ->paginate($request->per_page ?? 10);
+            ->paginate($request->per_page ?? 10)
+            ->appends(request()->input());
 
         return ContentResource::collection($content);
     }
