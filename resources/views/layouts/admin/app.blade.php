@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <head>
     <base href="">
     <meta charset="utf-8" />
-    <title>Sejawat For Her</title>
+    <title>SIPS Digital Creative</title>
 
     {{-- GOOGLE META --}}
     <meta name="robots" content="noindex,nofollow">
