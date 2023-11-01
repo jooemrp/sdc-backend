@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ContentController;
+use App\Http\Controllers\Api\NewsletterController;
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,6 @@ Route::get('/works/{id}', [PostController::class, 'show']);
 
 Route::get('/content', [ContentController::class, 'index']);
 Route::get('/content/{id}', [ContentController::class, 'show']);
+
+Route::get('/subscribe', [NewsletterController::class, 'subscribe']);
+Route::get('/unsubscribe', [NewsletterController::class, 'unsubscribe']);
