@@ -27,5 +27,5 @@ Route::get('/works/{id}', [PostController::class, 'show']);
 Route::get('/content', [ContentController::class, 'index']);
 Route::get('/content/{id}', [ContentController::class, 'show']);
 
-Route::get('/subscribe', [NewsletterController::class, 'subscribe']);
-Route::get('/unsubscribe', [NewsletterController::class, 'unsubscribe']);
+Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
+Route::post('/unsubscribe', [NewsletterController::class, 'unsubscribe']);
