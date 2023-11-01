@@ -23,7 +23,7 @@ class NewsletterController extends Controller
             }
         }
 
-        return response()->json(['message' => 'Already subscribed to news letter'], 400);
+        return response()->json(['message' => 'Already subscribed to newsletter'], 200);
     }
 
     /**
