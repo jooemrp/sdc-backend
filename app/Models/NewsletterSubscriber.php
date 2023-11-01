@@ -13,4 +13,17 @@ class NewsletterSubscriber extends Model
         'email',
         'email_verified_at',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->created_at = date("Y-m-d H:i:s");
+        });
+
+        static::updating(function ($model) {
+            $model->updated_at = date("Y-m-d H:i:s");
+        });
+    }
 }

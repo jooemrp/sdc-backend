@@ -18,7 +18,7 @@ class NewsletterController extends Controller
     {
         if (!Newsletter::isSubscribed($request->email)) {
             if (Newsletter::subscribe($request->email)) {
-                NewsletterSubscriber::create(['email', $request->email]);
+                NewsletterSubscriber::create(['email' => $request->email]);
                 return response()->json(['message' => 'Succesfully subscribed to newsletters'], 200);
             }
         }
