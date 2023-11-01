@@ -13,7 +13,7 @@
 	<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
 		<div class="form-group">
 			<label>{{ trans('admin.panel.title') }} *</label>
-			<input type="text" class="form-control" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.title') }}" name="title" value="{{ $data->title ?? old('title') }}" onkeyup="slugChange(this.value)" />
+			<input type="text" class="form-control" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.title') }}" name="title" value="{{ $data->title ?? old('title') }}" onchange="slugChange(this.value)" />
 			<span class="form-text text-muted"></span>
 		</div>
 	</div>
