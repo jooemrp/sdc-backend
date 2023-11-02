@@ -11,9 +11,9 @@
         <label>Category *</label>
         <select name="category" id="category" class="form-control">
             <option value="">-- Select category --</option>
-            <option value="Content Creation" {{ isset($data) && $data->category == 'Content Creation' }}>Content Creation</option>
-            <option value="Paid Marketing" {{ isset($data) && $data->category == 'Paid Marketing' }}>Paid Marketing</option>
-            <option value="Content Marketing" {{ isset($data) && $data->category == 'Content Marketing' }}>Content Marketing</option>
+            <option value="Content Creation" {{ isset($data) && $data->category == 'Content Creation' ? 'selected' : '' }}>Content Creation</option>
+            <option value="Paid Marketing" {{ isset($data) && $data->category == 'Paid Marketing ? 'selected' : ''' }}>Paid Marketing</option>
+            <option value="Content Marketing" {{ isset($data) && $data->category == 'Content Marketing ? 'selected' : ''' }}>Content Marketing</option>
         </select>
     </div>
 
