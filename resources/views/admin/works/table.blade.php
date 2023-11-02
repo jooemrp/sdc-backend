@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th style="width: 20px;">NO</th>
-                <th>Title</th>
+                <th style="width: 200px;">Title</th>
                 <th>Category</th>
                 <th>Actions</th>
             </tr>
