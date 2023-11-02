@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\FileUploader;
+use App\Http\Requests\Admin\ContentRequest;
 use App\Models\Content;
 use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
@@ -50,13 +51,10 @@ class ContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContentRequest $request)
     {
-        $request->validate([
-            'file' => 'image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-
         $data = $request->all();
+        $data['user_id'] = auth()->user()->id;
 
         $content = $this->service->create($data);
 
@@ -112,13 +110,10 @@ class ContentController extends Controller
      * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ContentRequest $request, $id)
     {
-        $request->validate([
-            'file' => 'image|mimes:jpeg,png,jpg|max:2048',
-        ]);
-
         $data = $request->all();
+        $data['user_id'] = auth()->user()->id;
 
         $model = $this->service->find($id);
         if (!is_null($request->file('file'))) {

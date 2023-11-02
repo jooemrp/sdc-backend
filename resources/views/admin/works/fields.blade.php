@@ -4,7 +4,7 @@
 
     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mb-4">
         <label>Title *</label>
-        <input type="text" value="{{ $data->title ?? old('title') }}" class="form-control" placeholder="Title" name="title" onchange="slugChange(this.value)" />
+        <input type="text" value="{{ $data->title ?? old('title') }}" class="form-control" placeholder="Title" name="title" onkeyup="slugChange(this.value)" />
     </div>
 
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">

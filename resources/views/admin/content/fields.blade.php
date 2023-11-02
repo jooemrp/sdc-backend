@@ -5,30 +5,33 @@
 <link rel="stylesheet" href="{{ asset('custom-form/docs.css') }}"> --}}
 @endpush
 
-<input type="hidden" name="user_id" value="{{ auth()->user()->id }}" />
 <input type="hidden" name="status" id="status" value="1">
-<input type="hidden" name="slug" id="slug" value="{{ $data->slug ?? old('slug') }}">
 
 <div class="row">
-	<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 		<div class="form-group">
 			<label>{{ trans('admin.panel.title') }} *</label>
-			<input type="text" class="form-control" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.title') }}" name="title" value="{{ $data->title ?? old('title') }}" onchange="slugChange(this.value)" />
-			<span class="form-text text-muted"></span>
+			<input type="text" class="form-control" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.title') }}" name="title" value="{{ $data->title ?? old('title') }}" onkeyup="slugChange(this.value)" />
+			<span class="form-text text-danger">
+				@error('title')
+				{{ $message }}
+				@enderror
+			</span>
 		</div>
 	</div>
 
-	<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 		<div class="form-group">
-			<label>{{ trans('admin.panel.type') }} *</label>
-			<select name="type" id="type" class="form-control">
-				@foreach (Config::get('content-type') as $type => $value)
-				<option value="{{ $type }}" {{ (isset($data) && $data->type == $type) || request()->type == $type ? 'selected' : '' }}>{{ $value }}</option>
-				@endforeach
-			</select>
-			<span class="form-text text-muted"></span>
+			<label>{{ trans('admin.panel.slug') }} *</label>
+			<input type="text" id="slug" class="form-control" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.slug') }}" name="slug" value="{{ $data->slug ?? old('slug') }}" onkeyup="slugChange(this.value)" />
+			<span class="form-text text-danger">
+				@error('slug')
+				{{ $message }}
+				@enderror
+			</span>
 		</div>
 	</div>
+
 	{{-- <div class="col-4">
 		<div class="form-group">
 			<label>File </label>
@@ -43,7 +46,11 @@
 		<div class="form-group">
 			<label>{{ trans('admin.panel.content') }} *</label>
 			<textarea class="summernote" id="kt_summernote_1" name="body">{{ $data->body ?? old('body') }}</textarea>
-			<span class="form-text text-muted"></span>
+			<span class="form-text text-danger">
+				@error('body')
+				{{ $message }}
+				@enderror
+			</span>
 		</div>
 	</div>
 	<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
@@ -66,9 +73,26 @@
 						</span>
 						{{-- error message --}}
 					</div>
-					@error('file')
-					<div class="alert alert-danger">{{ $message }}</div>
-					@enderror
+					<span class="form-text text-danger">
+						@error('file')
+						{{ $message }}
+						@enderror
+					</span>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="form-group">
+					<label>{{ trans('admin.panel.type') }} *</label>
+					<select name="type" id="type" class="form-control">
+						@foreach (Config::get('content-type') as $type => $value)
+						<option value="{{ $type }}" {{ (isset($data) && $data->type == $type) || request()->type == $type ? 'selected' : '' }}>{{ $value }}</option>
+						@endforeach
+					</select>
+					<span class="form-text text-danger">
+						@error('type')
+						{{ $message }}
+						@enderror
+					</span>
 				</div>
 			</div>
 			{{-- <div class="col-lg-12 col-md-4 col-sm-4 col-12">
@@ -145,6 +169,11 @@
 		<div class="input-group">
 			<input type="text" class="form-control col-9" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.meta.title') }}" name="meta_title" value="{{ $data->meta_title ?? old('meta_title') }}" />
 		</div>
+		<span class="form-text text-danger">
+			@error('meta_title')
+			{{ $message }}
+			@enderror
+		</span>
 	</div>
 </div>
 
@@ -154,6 +183,11 @@
 		<div class="input-group">
 			<input type="text" class="form-control col-9" placeholder="{{ trans('admin.general.add') }} {{ trans('admin.panel.meta.description') }}" name="meta_description" value="{{ $data->meta_description ?? old('meta_description') }}" />
 		</div>
+		<span class="form-text text-danger">
+			@error('meta_description')
+			{{ $message }}
+			@enderror
+		</span>
 	</div>
 </div>
 
