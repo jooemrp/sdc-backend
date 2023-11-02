@@ -6,7 +6,7 @@
 
 @push('page_script')
 <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
-<script src="{{ asset('js/pages/crud/datatables/extensions/responsive_content.js') }}"></script>
+<script src="{{ asset('js/pages/crud/datatables/extensions/responsive.js') }}"></script>
 @endpush
 
 @section('content')
