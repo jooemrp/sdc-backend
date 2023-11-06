@@ -62,18 +62,6 @@
         },
         {
             "name": "aws/aws-sdk-php",
-<<<<<<< HEAD
-            "version": "3.283.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5",
-                "reference": "0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5",
-=======
             "version": "3.283.16",
             "source": {
                 "type": "git",
@@ -84,7 +72,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cb629771356d6a4d12bb030a072b832044440672",
                 "reference": "cb629771356d6a4d12bb030a072b832044440672",
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
                 "shasum": ""
             },
             "require": {
@@ -164,15 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-<<<<<<< HEAD
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.283.12"
-            },
-            "time": "2023-10-25T20:08:04+00:00"
-=======
                 "source": "https://github.com/aws/aws-sdk-php/tree/3.283.16"
             },
             "time": "2023-10-31T18:21:09+00:00"
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
         },
         {
             "name": "brick/math",
@@ -4488,8 +4469,6 @@
                 }
             ],
             "time": "2023-10-25T11:26:54+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -4631,7 +4610,6 @@
                 }
             ],
             "time": "2023-08-23T09:04:39+00:00"
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
         },
         {
             "name": "spatie/laravel-permission",
