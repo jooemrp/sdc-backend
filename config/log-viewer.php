@@ -20,5 +20,5 @@ return [
     | The 'web' middleware will be applied automatically if empty.
     |
     */
-    'middleware' => ['role:admin', 'auth']
+    'middleware' => ['auth']
 ];
