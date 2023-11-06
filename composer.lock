@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b79ed635f8f43369f7395b486fcd2b4",
+    "content-hash": "6ff5f275418468c60025e4367514115a",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,29 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-<<<<<<< HEAD
-            "version": "3.283.12",
+            "version": "3.284.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5"
+                "reference": "1b7e926acc990509e3d13fa708cdede686b40d90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5",
-                "reference": "0807e68e8ffaa57b86f9cfef3a3dfc411bff41e5",
-=======
-            "version": "3.283.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cb629771356d6a4d12bb030a072b832044440672"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cb629771356d6a4d12bb030a072b832044440672",
-                "reference": "cb629771356d6a4d12bb030a072b832044440672",
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1b7e926acc990509e3d13fa708cdede686b40d90",
+                "reference": "1b7e926acc990509e3d13fa708cdede686b40d90",
                 "shasum": ""
             },
             "require": {
@@ -164,15 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-<<<<<<< HEAD
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.283.12"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.284.0"
             },
-            "time": "2023-10-25T20:08:04+00:00"
-=======
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.283.16"
-            },
-            "time": "2023-10-31T18:21:09+00:00"
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
+            "time": "2023-11-03T18:13:48+00:00"
         },
         {
             "name": "brick/math",
@@ -1333,16 +1314,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.30.0",
+            "version": "v10.30.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3dd85d9dbea82b937f8eaf344b50d613c5d1127a"
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3dd85d9dbea82b937f8eaf344b50d613c5d1127a",
-                "reference": "3dd85d9dbea82b937f8eaf344b50d613c5d1127a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
+                "reference": "7a2da50258c4d0f693b738d3f3c69b2693aea6c1",
                 "shasum": ""
             },
             "require": {
@@ -1531,7 +1512,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-10-31T13:19:45+00:00"
+            "time": "2023-11-01T13:52:17+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2444,16 +2425,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.10",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "cae998aa9a474dc0de81869ab1536014c7b31a64"
+                "reference": "db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/cae998aa9a474dc0de81869ab1536014c7b31a64",
-                "reference": "cae998aa9a474dc0de81869ab1536014c7b31a64",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08",
+                "reference": "db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08",
                 "shasum": ""
             },
             "require": {
@@ -2506,7 +2487,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.10"
+                "source": "https://github.com/livewire/livewire/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -2514,7 +2495,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-18T11:18:12+00:00"
+            "time": "2023-11-03T15:05:18+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -3266,6 +3247,147 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "opcodesio/log-viewer",
+            "version": "v3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opcodesio/log-viewer.git",
+                "reference": "69d886a779611da501841148314b03b2c9a52108"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opcodesio/log-viewer/zipball/69d886a779611da501841148314b03b2c9a52108",
+                "reference": "69d886a779611da501841148314b03b2c9a52108",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0|^10.0",
+                "opcodesio/mail-parser": "^0.1.1",
+                "php": "^8.0"
+            },
+            "conflict": {
+                "arcanedev/log-viewer": "^8.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^7.2",
+                "itsgoingd/clockwork": "^5.1",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.0",
+                "orchestra/testbench": "^7.6|^8.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "spatie/test-time": "^1.3"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Required for multi-host support. ^7.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Opcodes\\LogViewer\\LogViewerServiceProvider"
+                    ],
+                    "aliases": {
+                        "LogViewer": "Opcodes\\LogViewer\\Facades\\LogViewer"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Opcodes\\LogViewer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arunas Skirius",
+                    "email": "arukomp@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fast and easy-to-use log viewer for your Laravel application",
+            "homepage": "https://github.com/opcodesio/log-viewer",
+            "keywords": [
+                "arukompas",
+                "better-log-viewer",
+                "laravel",
+                "log viewer",
+                "logs",
+                "opcodesio"
+            ],
+            "support": {
+                "issues": "https://github.com/opcodesio/log-viewer/issues",
+                "source": "https://github.com/opcodesio/log-viewer/tree/v3.1.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/arunas",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/arukompas",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-10-10T11:42:12+00:00"
+        },
+        {
+            "name": "opcodesio/mail-parser",
+            "version": "v0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opcodesio/mail-parser.git",
+                "reference": "7668596baa73ef2678ab6888f1a4639d7d054f21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opcodesio/mail-parser/zipball/7668596baa73ef2678ab6888f1a4639d7d054f21",
+                "reference": "7668596baa73ef2678ab6888f1a4639d7d054f21",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.16",
+                "symfony/var-dumper": "^6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Opcodes\\MailParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arunas Skirius",
+                    "email": "arukomp@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Parse emails without the mailparse extension",
+            "keywords": [
+                "arukompas",
+                "email",
+                "email parser",
+                "mail",
+                "opcodesio",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/opcodesio/mail-parser/issues",
+                "source": "https://github.com/opcodesio/mail-parser/tree/v0.1.5"
+            },
+            "time": "2023-08-25T16:34:23+00:00"
         },
         {
             "name": "openspout/openspout",
@@ -4328,28 +4450,28 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30"
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/62f7463483d1bd975f6f06025d89d42a29608fe1",
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
                 "php": "^7.3|^8.0",
                 "psr/log": "^1.0 | ^2.0 | ^3.0",
-                "symfony/process": "^4.2|^5.0|^6.0"
+                "symfony/process": "^4.2|^5.0|^6.0|^7.0"
             },
             "require-dev": {
                 "pestphp/pest": "^1.21",
                 "phpunit/phpunit": "^8.5.21|^9.4.4",
-                "symfony/var-dumper": "^4.2|^5.0|^6.0"
+                "symfony/var-dumper": "^4.2|^5.0|^6.0|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -4377,22 +4499,22 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.7.1"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.7.2"
             },
-            "time": "2023-07-27T07:57:32+00:00"
+            "time": "2023-11-03T10:08:02+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "10.14.0",
+            "version": "10.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "fde92469e37d580c001b9d146c9454643c6d6d57"
+                "reference": "f464c82357500c5c68ea350edff35ed9831fd48e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/fde92469e37d580c001b9d146c9454643c6d6d57",
-                "reference": "fde92469e37d580c001b9d146c9454643c6d6d57",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/f464c82357500c5c68ea350edff35ed9831fd48e",
+                "reference": "f464c82357500c5c68ea350edff35ed9831fd48e",
                 "shasum": ""
             },
             "require": {
@@ -4475,7 +4597,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.14.0"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/10.15.0"
             },
             "funding": [
                 {
@@ -4487,9 +4609,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-25T11:26:54+00:00"
-<<<<<<< HEAD
-=======
+            "time": "2023-11-03T13:09:19+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -4631,7 +4751,6 @@
                 }
             ],
             "time": "2023-08-23T09:04:39+00:00"
->>>>>>> b7f2ef1a9c121e1957659e3888c7a6baa1e5e20a
         },
         {
             "name": "spatie/laravel-permission",
@@ -7648,16 +7767,16 @@
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v10.9.1",
+            "version": "v10.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "daee4c1c3f42da277dc2fc12d8b5928fc3329715"
+                "reference": "2d7e73cc627923c56cdb26d04863ddc07fb8f1e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/daee4c1c3f42da277dc2fc12d8b5928fc3329715",
-                "reference": "daee4c1c3f42da277dc2fc12d8b5928fc3329715",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/2d7e73cc627923c56cdb26d04863ddc07fb8f1e6",
+                "reference": "2d7e73cc627923c56cdb26d04863ddc07fb8f1e6",
                 "shasum": ""
             },
             "require": {
@@ -7705,7 +7824,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables-html/issues",
-                "source": "https://github.com/yajra/laravel-datatables-html/tree/v10.9.1"
+                "source": "https://github.com/yajra/laravel-datatables-html/tree/v10.10.0"
             },
             "funding": [
                 {
@@ -7721,20 +7840,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-10-04T03:17:37+00:00"
+            "time": "2023-11-04T01:30:28+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v10.10.0",
+            "version": "v10.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "b4943a3ee422e0a390d85a4cb01dee9360137b61"
+                "reference": "6badd623d6352284a926de604b55db881057ca67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/b4943a3ee422e0a390d85a4cb01dee9360137b61",
-                "reference": "b4943a3ee422e0a390d85a4cb01dee9360137b61",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/6badd623d6352284a926de604b55db881057ca67",
+                "reference": "6badd623d6352284a926de604b55db881057ca67",
                 "shasum": ""
             },
             "require": {
@@ -7746,6 +7865,9 @@
                 "php": "^8.0.2"
             },
             "require-dev": {
+                "algolia/algoliasearch-client-php": "^3.4",
+                "laravel/scout": "^10.5",
+                "meilisearch/meilisearch-php": "^1.4",
                 "nunomaduro/larastan": "^2.4",
                 "orchestra/testbench": "^8",
                 "yajra/laravel-datatables-html": "^9.3.4|^10"
@@ -7797,7 +7919,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables/issues",
-                "source": "https://github.com/yajra/laravel-datatables/tree/v10.10.0"
+                "source": "https://github.com/yajra/laravel-datatables/tree/v10.11.0"
             },
             "funding": [
                 {
@@ -7805,7 +7927,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-04T02:26:02+00:00"
+            "time": "2023-11-04T01:21:13+00:00"
         }
     ],
     "packages-dev": [
@@ -7879,16 +8001,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.3",
+            "version": "2.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187"
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c83e88a30524f9360b11f585f71e6b17313b7187",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a139776fa3f5985a50b509f2a02ff0f709d2a546",
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546",
                 "shasum": ""
             },
             "require": {
@@ -7938,7 +8060,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.3"
+                "source": "https://github.com/filp/whoops/tree/2.15.4"
             },
             "funding": [
                 {
@@ -7946,7 +8068,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-13T12:00:00+00:00"
+            "time": "2023-11-03T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
