@@ -41,7 +41,7 @@ class WorkRequest extends FormRequest
         if (!is_null(request()->file('content')) && !is_array(request()->file('content'))) {
             $rules['content'] = 'image|mimes:jpeg,png,jpg,webp|max:512';
         } elseif (!is_null(request()->file('content')) && is_array(request()->file('content'))) {
-            $rules['content'] = 'nullable|array|min:2|max:5';
+            $rules['content'] = 'nullable|array|min:1';
             $rules['content.*'] = 'image|mimes:jpeg,png,jpg,webp|max:512';
         }
 
