@@ -73,4 +73,6 @@ Route::group([
     Route::get('/content/table', [App\Http\Controllers\Admin\ContentController::class, 'table'])->name('content.table');
     Route::get('/content/selected/{id}', [App\Http\Controllers\Admin\ContentController::class, 'selectedUpdate'])->name('content.selected.update');
     Route::resource('content', App\Http\Controllers\Admin\ContentController::class);
+
+    Route::resource('file-manager', App\Http\Controllers\Admin\MediaFileController::class);
 });

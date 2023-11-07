@@ -33,6 +33,7 @@ var KTSummernoteDemo = (function () {
                 ["insert", ["picture", "link", "video", "table", "hr"]],
                 ["view", ["fullscreen", "codeview", "undo", "redo", "help"]],
             ],
+            styleTags: ["p", "h1", "h2", "h3", "h4", "h5"],
             height: 400,
             tabsize: 2,
         });
