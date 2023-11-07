@@ -85,9 +85,9 @@ class PostController extends Controller
 
         if (!is_null($request->file('content'))) {
             if (!is_array($request->file('content'))) {
-                FileUploader::upload($post, "Work_content", 'content', 'update');
+                FileUploader::upload($post, "Work_content", 'content', 'store');
             } else {
-                FileUploader::uploadMultiple($post, "Work_content", ['content'], 'update');
+                FileUploader::uploadMultiple($post, "Work_content", ['content'], 'store');
             }
         }
 
@@ -106,5 +106,14 @@ class PostController extends Controller
         $posts->delete();
 
         return redirect()->route('admin.works.index');
+    }
+
+    public function removeMedia($id, $mediaKey)
+    {
+        $posts = Post::find($id);
+
+        $del = $posts->getMedia('Work_content')[$mediaKey]->delete();
+
+        return redirect()->back();
     }
 }

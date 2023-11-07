@@ -59,11 +59,16 @@
             <label>File </label>
             <input type="file" onchange="document.getElementById('file-custom-2-label').innerHTML = `Selected ${this.files.length} files`" style="display:none;" id="file-custom-2" aria-label="File browser example" name="content[]" accept="image/png, image/jpeg, image/jpg" multiple>
             {{-- TO DO: show content list --}}
-            <label for="file-custom-2" type="button" id="file-custom-2-label" class="btn btn-primary form-control" id="upload">{{ isset($data) ? 'Replace all' : 'Upload' }}</label>
+            <label for="file-custom-2" type="button" id="file-custom-2-label" class="btn btn-primary form-control" id="upload">Upload</label>
             @if (isset($data) && $data->getMedia('Work_content')->count() > 0)
-            @foreach ($data->getMedia('Work_content') as $content)
-            <a href="{{ $content->getUrl() }}" target="_blank">View</a>
+            <form></form>
+            @foreach ($data->getMedia('Work_content') as $key => $content)
+            <a href="{{ $content->getUrl() }}" target="_blank">{{ $content->name }} [{{ $key }}]</a> <a href="javascript:void(0)" class="text-danger" onclick="document.getElementById('remove-media-{{ $key }}').submit()">&#x2715</a>
             <br>
+            <form action="{{ route('admin.works.media.remove', [$data->id, $key]) }}" method="POST" id="remove-media-{{ $key }}">
+                @method('DELETE')
+                @csrf
+            </form>
             @endforeach
             @else
             <small>No content yet</small>

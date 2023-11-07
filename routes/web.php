@@ -42,6 +42,7 @@ Route::group([
     Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
     Route::resource('works', App\Http\Controllers\Admin\PostController::class);
+    Route::delete('/works/remove-media/{id}/{mediaKey}', [App\Http\Controllers\Admin\PostController::class, 'removeMedia'])->name('works.media.remove');
 
     Route::get('/user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('user.index');
     Route::get('/user/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('user.create');
