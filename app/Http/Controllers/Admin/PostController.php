@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\FileUploader;
+use App\Http\Requests\Admin\WorkRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -20,7 +21,7 @@ class PostController extends Controller
         return view('admin.works.create');
     }
 
-    public function store(Request $request)
+    public function store(WorkRequest $request)
     {
         $input = $request->all();
 
@@ -59,7 +60,7 @@ class PostController extends Controller
         return view('admin.works.edit', compact('data'));
     }
 
-    public function update(Request $request, $id)
+    public function update(WorkRequest $request, $id)
     {
         $input = $request->all();
 

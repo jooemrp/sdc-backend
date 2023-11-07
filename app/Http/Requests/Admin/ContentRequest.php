@@ -21,7 +21,7 @@ class ContentRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'title' => 'required|max:255',
             'type' => 'required',
             'body' => 'required',
@@ -32,5 +32,11 @@ class ContentRequest extends FormRequest
             'status' => 'required|in:0,1',
             'slug' => 'required|max:255|unique:contents,slug' . (request('content') ? ',' . request('content') : ''),
         ];
+
+        if (!is_null(request()->file('file'))) {
+            $rules['file'] = 'image|mimes:jpeg,png,jpg|max:512';
+        }
+
+        return $rules;
     }
 }

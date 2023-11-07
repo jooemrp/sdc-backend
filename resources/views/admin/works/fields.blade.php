@@ -5,6 +5,11 @@
     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mb-4">
         <label>Title *</label>
         <input type="text" value="{{ $data->title ?? old('title') }}" class="form-control" placeholder="Title" name="title" onkeyup="slugChange(this.value)" />
+        <span class="form-text text-danger">
+            @error('title')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
@@ -15,31 +20,61 @@
             <option value="Paid Marketing" {{ isset($data) && $data->category == 'Paid Marketing' ? 'selected' : '' }}>Paid Marketing</option>
             <option value="Content Marketing" {{ isset($data) && $data->category == 'Content Marketing' ? 'selected' : '' }}>Content Marketing</option>
         </select>
+        <span class="form-text text-danger">
+            @error('category')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 mb-4">
         <label>Preview *</label>
         <textarea name="preview" id="preview" placeholder="Preview" cols="30" rows="3" class="form-control">{{ $data->preview ?? old('preview') }}</textarea>
+        <span class="form-text text-danger">
+            @error('preview')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
         <label>Color</label>
         <input type="text" value="{{ $data->color ?? old('color') }}" class="form-control" placeholder="black, sips-navy, sips-maroon, sips-green, sips-orange" name="color" />
+        <span class="form-text text-danger">
+            @error('color')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-12 mb-4">
         <label>Challenge *</label>
         <textarea name="challenge" id="challenge" placeholder="Challenge" cols="30" rows="10" class="form-control">{{ $data->challenge ?? old('challenge') }}</textarea>
+        <span class="form-text text-danger">
+            @error('challenge')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-12 mb-4">
         <label>Approach *</label>
         <textarea name="approach" id="approach" placeholder="Approach" cols="30" rows="10" class="form-control">{{ $data->approach ?? old('approach') }}</textarea>
+        <span class="form-text text-danger">
+            @error('approach')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-12 mb-4">
         <label>Result *</label>
         <textarea name="result" id="result" placeholder="Result" cols="30" rows="10" class="form-control">{{ $data->result ?? old('result') }}</textarea>
+        <span class="form-text text-danger">
+            @error('result')
+            {{ $message }}
+            @enderror
+        </span>
     </div>
 
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
@@ -52,6 +87,12 @@
             @else
             <small>No thumbnail yet</small>
             @endif
+
+            <span class="form-text text-danger">
+                @error('thumbnail')
+                {{ $message }}
+                @enderror
+            </span>
         </div>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
@@ -73,6 +114,11 @@
             @else
             <small>No content yet</small>
             @endif
+
+            <span class="form-text text-danger">
+                @error('content'){{ $message }}@enderror
+                @error('content.*'){{ $message }}@enderror
+            </span>
         </div>
     </div>
 
