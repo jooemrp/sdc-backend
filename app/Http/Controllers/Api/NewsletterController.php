@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\NewsletterRequest;
 use App\Models\NewsletterSubscriber;
 use Spatie\Newsletter\Facades\Newsletter;
+use Mail;
 
 class NewsletterController extends Controller
 {
@@ -16,14 +17,55 @@ class NewsletterController extends Controller
      */
     public function subscribe(NewsletterRequest $request)
     {
-        if (!Newsletter::isSubscribed($request->email)) {
-            if (Newsletter::subscribe($request->email)) {
-                NewsletterSubscriber::create(['email' => $request->email]);
-                return response()->json(['message' => 'Succesfully subscribed to newsletters'], 200);
-            }
+        if (
+            Newsletter::isSubscribed($request->email)
+            && NewsletterSubscriber::where('email', $request->email)->exists()
+        ) {
+            return response()->json(['message' => 'Already subscribed to newsletter'], 200);
         }
 
-        return response()->json(['message' => 'Already subscribed to newsletter'], 200);
+        // Subscribe Newsletter Mailchimp
+        if (!Newsletter::isSubscribed($request->email)) {
+            Newsletter::subscribe($request->email);
+        }
+
+        // Record email and send e-book
+        if ($this->sendMail($request->email)) {
+            NewsletterSubscriber::create(['email' => $request->email]);
+        }
+
+        return response()->json(['message' => 'Succesfully subscribed to newsletters'], 200);
+    }
+
+    private function sendMail($email)
+    {
+        try {
+            $data["email"] = $email;
+            $data["title"] = 'Welcome';
+            $data["body"] = "Thank you for subscribing to our newsletter. Here is a free e-book for you!";
+
+            $files = [
+                public_path('attachments/test_image.jpeg'),
+                public_path('attachments/test_pdf.pdf'),
+            ];
+
+            Mail::send('mail.Test_mail', $data, function ($message) use ($data, $files) {
+                $message->to($data["email"])
+                    ->from(config('app.url'), config('app.name'))
+                    ->subject($data["title"]);
+
+                foreach ($files as $file) {
+                    $message->attach($file);
+                }
+            });
+        } catch (\Throwable $t) {
+            report($t);
+        } catch (Exception $e) {
+            // var_dump($e->getMessage());
+            return false;
+        }
+
+        return true;
     }
 
     /**
