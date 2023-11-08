@@ -44,7 +44,7 @@ class MediaFileController extends Controller
         $user_media = UserMedia::create([
             'user_id' => auth()->id(),
             'name' => $request->file('file')->hashName(),
-            'type' => 'file'
+            'type' => 'File' // collection
         ]);
 
         $file = FileUploader::upload($user_media, "File", 'file', 'store');
