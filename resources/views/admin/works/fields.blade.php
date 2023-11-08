@@ -49,7 +49,7 @@
 
     <div class="col-12 mb-4">
         <label>Challenge *</label>
-        <textarea name="challenge" id="challenge" placeholder="Challenge" cols="30" rows="10" class="form-control">{{ $data->challenge ?? old('challenge') }}</textarea>
+        <textarea name="challenge" id="tinyMceEditor-challenge" placeholder="Challenge" cols="30" rows="10" class="form-control">{{ $data->challenge ?? old('challenge') }}</textarea>
         <span class="form-text text-danger">
             @error('challenge')
             {{ $message }}
@@ -59,7 +59,7 @@
 
     <div class="col-12 mb-4">
         <label>Approach *</label>
-        <textarea name="approach" id="approach" placeholder="Approach" cols="30" rows="10" class="form-control">{{ $data->approach ?? old('approach') }}</textarea>
+        <textarea name="approach" id="tinyMceEditor-approach" placeholder="Approach" cols="30" rows="10" class="form-control">{{ $data->approach ?? old('approach') }}</textarea>
         <span class="form-text text-danger">
             @error('approach')
             {{ $message }}
@@ -69,7 +69,7 @@
 
     <div class="col-12 mb-4">
         <label>Result *</label>
-        <textarea name="result" id="result" placeholder="Result" cols="30" rows="10" class="form-control">{{ $data->result ?? old('result') }}</textarea>
+        <textarea name="result" id="tinyMceEditor-result" placeholder="Result" cols="30" rows="10" class="form-control">{{ $data->result ?? old('result') }}</textarea>
         <span class="form-text text-danger">
             @error('result')
             {{ $message }}
@@ -158,8 +158,11 @@
     function formSubmit() {
 		document.getElementById("kt_form").submit();
 	}
+    
     function slugChange(slug) {
         document.getElementById("slug").value = slug.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 	}
 </script>
 @endpush
+
+@include('admin.shared.tinymce-init', ['selector' => '#tinyMceEditor-challenge, #tinyMceEditor-approach, #tinyMceEditor-result'])

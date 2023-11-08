@@ -45,7 +45,6 @@
 	<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
 		<div class="form-group">
 			<label>{{ trans('admin.panel.content') }} *</label>
-			{{-- <textarea class="summernote" id="kt_summernote_1" name="body">{{ $data->body ?? old('body') }}</textarea> --}}
 			<textarea style="height: 100%;" id="tinyMceEditor" name="body">{{ $data->body ?? old('body') }}</textarea>
 			<span class="form-text text-danger">
 				@error('body')
@@ -207,19 +206,11 @@
 <script>
 	function formSubmit() {
 		document.getElementById("status").value = "1";
-
-		var myContent = tinymce.get("tinyMceEditor").getContent();
-		$('#tinyMceEditor').val(myContent);
-
 		document.getElementById("kt_form").submit();
 	}
 
 	function formSubmitDraft() {
 		document.getElementById("status").value = "0";
-
-		var myContent = tinymce.get("tinyMceEditor").getContent();
-		$('#tinyMceEditor').val(myContent);
-
 		document.getElementById("kt_form").submit();
 	}
 
