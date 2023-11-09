@@ -49,7 +49,7 @@ class NewsletterController extends Controller
                 public_path('attachments/test_pdf.pdf'),
             ];
 
-            Mail::send('mail.Test_mail', $data, function ($message) use ($data, $files) {
+            Mail::send('mail.subscribe-newsletter', $data, function ($message) use ($data, $files) {
                 $message->to($data["email"])
                     ->from(config('app.url'), config('app.name'))
                     ->subject($data["title"]);
