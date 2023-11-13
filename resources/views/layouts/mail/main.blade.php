@@ -178,7 +178,7 @@
                                                     <tr>
                                                         <td style="width:64px;">
 
-                                                            <img height="auto" src="{{ asset('sips-ico.png') }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="64" />
+                                                            <img height="auto" src="{{ asset('logo-sips-full.png') }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="64" />
 
                                                         </td>
                                                     </tr>
