@@ -23,6 +23,8 @@ class ContentResource extends JsonResource
             $data['contents'][] = $content->getUrl();
         }
 
+        $data['is_ebook_available'] = $this->id == 32 ? true : false;
+
         return $data;
     }
 }
