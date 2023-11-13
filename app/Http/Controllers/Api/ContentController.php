@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\DownloadContentEbookRequest;
+use App\Http\Requests\Api\NewsletterRequest;
 use App\Http\Resources\Api\ContentResource;
 use App\Models\Content;
+use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContentController extends Controller
 {
@@ -76,5 +80,56 @@ class ContentController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function downloadEbook(DownloadContentEbookRequest $request)
+    {
+        $input = $request->all();
+
+        if (NewsletterSubscriber::where('email', $input['email'])->exists()) {
+            return response()->json(['message' => 'Already downloaded E-book'], 200);
+        }
+
+        // Record email and send e-book
+        $filePath = null;
+        $title = '';
+        $content = Content::where('slug', $input['slug'])->firstOrFail();
+        if ($content->id == 32) {
+            $input['title'] = 'Panduan Anda memulai strategi digital marketing';
+            $filePath = public_path('attachments/[ebook] SIPS Digital Creative.pdf');
+        }
+
+        $sendMail = $this->sendMail($input, $filePath);
+        if ($sendMail) {
+            NewsletterSubscriber::create([
+                'name' => $input['name'],
+                'email' => $input['email'],
+                'company' => $input['company']
+            ]);
+        }
+
+        return response()->json(['message' => 'E-book sent to your email!'], 200);
+    }
+
+    private function sendMail($data, $file)
+    {
+        try {
+            Mail::send('mail.download-content-ebook', $data, function ($message) use ($data, $file) {
+                $message->to($data["email"])
+                    ->from(config('app.url'), config('app.name'))
+                    ->subject($data["title"])
+                    ->attach($file);
+            });
+        } catch (\Throwable $t) {
+            report($t);
+        } catch (Exception $e) {
+            // var_dump($e->getMessage());
+            return false;
+        }
+
+        return true;
     }
 }

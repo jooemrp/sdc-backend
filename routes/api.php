@@ -25,6 +25,7 @@ Route::get('/works', [PostController::class, 'index']);
 Route::get('/works/{id}', [PostController::class, 'show']);
 
 Route::get('/content', [ContentController::class, 'index']);
+Route::post('/content/download-ebook', [ContentController::class, 'downloadEbook']);
 Route::get('/content/{id}', [ContentController::class, 'show']);
 
 Route::post('/subscribe', [NewsletterController::class, 'subscribe']);

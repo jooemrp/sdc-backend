@@ -30,9 +30,9 @@ class NewsletterController extends Controller
         }
 
         // Record email and send e-book
-        if ($this->sendMail($request->email)) {
-            NewsletterSubscriber::create(['email' => $request->email]);
-        }
+        // if ($this->sendMail($request->email)) {
+        NewsletterSubscriber::create(['email' => $request->email]);
+        // }
 
         return response()->json(['message' => 'Succesfully subscribed to newsletters'], 200);
     }

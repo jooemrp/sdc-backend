@@ -211,12 +211,11 @@
                                         </td>
                                     </tr> --}}
 
-
                                     <tr>
-                                        <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                        <td align="left" style="font-size:0px; padding:10px 25px; word-break:break-word;">
 
-                                            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;color:#525252;">
-                                                Best regards,<br><br> Admin<br>
+                                            <div style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:14px; line-height:20px; text-align:left; color:#525252;">
+                                                Best regards,<br><br> SIPS Digital Creative Team<br>
                                             </div>
 
                                         </td>
@@ -256,68 +255,110 @@
 
         <div style="Margin:0px auto;max-width:600px;">
 
-            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
-                <tbody>
-                    <tr>
-                        <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;">
-                            <!--[if mso | IE]>
-                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                
-        <tr>
-      
-            <td
-               style="vertical-align:bottom;width:600px;"
-            >
-          <![endif]-->
+            <!-- WRAPPER -->
+            <!-- Set wrapper width (twice) -->
+            <table border="0" cellpadding="0" cellspacing="0" align="center" width="560" style="min-height: 100px;border-collapse: collapse; border-spacing: 0; padding: 20 20 20 20; width: inherit;
+	max-width: 560px;" class="wrapper">
 
-                            <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;">
 
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td style="vertical-align:bottom;padding:0;">
+                <!-- SOCIAL NETWORKS -->
+                <!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
+                <tr>
+                    <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
+			padding-top: 20px;" class="social-icons">
+                        <table width="256" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; border-spacing: 0; padding: 0;">
+                            <tr>
 
-                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <!-- ICON 1 -->
+                                {{-- <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;">
+                                    <a target="_blank" href="https://www.facebook.com/sejawat.idn" style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
+					color: #000000;" alt="F" title="Facebook" width="44" height="44" src="https://raw.githubusercontent.com/konsav/email-templates/master/images/social-icons/facebook.png"></a>
+                                </td> --}}
 
-                                                    <tr>
-                                                        <td align="center" style="font-size:0px;padding:0;word-break:break-word;">
+                                <!-- ICON 2 -->
+                                {{-- <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;">
+                                    <a target="_blank" href="https://twitter.com/sejawat_id" style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
+					color: #000000;" alt="T" title="Twitter" width="44" height="44" src="https://raw.githubusercontent.com/konsav/email-templates/master/images/social-icons/twitter.png"></a>
+                                </td> --}}
 
-                                                            <a href="https://digital.sipsedutech.id/" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;">
-                                                                SIPS DIGITAL
-                                                            </a>
+                                <!-- ICON 3 -->
+                                <!-- <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank" href="https://raw.githubusercontent.com/konsav/email-templates/" style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
+					color: #000000;" alt="G" title="Google Plus" width="44" height="44" src="https://raw.githubusercontent.com/konsav/email-templates/master/images/social-icons/googleplus.png"></a></td> -->
 
-                                                        </td>
-                                                    </tr>
+                                <!-- ICON 4 -->
+                                <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;">
+                                    <a target="_blank" href="https://instagram.com/sipsdigitalcreative?igshid=OGQ5ZDc2ODk2ZA==" style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
+					color: #000000;" alt="I" title="Instagram" width="44" height="44" src="https://raw.githubusercontent.com/konsav/email-templates/master/images/social-icons/instagram.png"></a>
+                                </td>
 
-                                                    <tr>
-                                                        <td align="center" style="font-size:0px;padding:10px;word-break:break-word;">
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
-                                                            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;">
-                                                                <a href="#" style="color:#575757">Unsubscribe</a> from our emails
-                                                            </div>
+                <!-- End of WRAPPER -->
 
-                                                        </td>
-                                                    </tr>
 
-                                                </table>
+                <tr>
+                    <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;">
+                        <!--[if mso | IE]>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0">
 
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+<tr>
 
-                            </div>
+<td
+style="vertical-align:bottom;width:600px;"
+>
+<![endif]-->
 
-                            <!--[if mso | IE]>
-            </td>
-          
-        </tr>
-      
-                  </table>
-                <![endif]-->
-                        </td>
-                    </tr>
-                </tbody>
+                        <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:bottom;width:100%;">
+
+                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:bottom;padding:0;">
+
+                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+
+                                                <tr>
+                                                    <td align="center" style="font-size:0px;padding:0;word-break:break-word;">
+
+                                                        <a href="https://digital.sipsedutech.id/" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;">
+                                                            SIPS DIGITAL CREATIVE
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+
+                                                {{-- <tr>
+                                                    <td align="center" style="font-size:0px;padding:10px;word-break:break-word;">
+
+                                                        <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;">
+                                                            <a href="#" style="color:#575757">Unsubscribe</a> from our emails
+                                                        </div>
+
+                                                    </td>
+                                                </tr> --}}
+
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+</td>
+
+</tr>
+
+</table>
+<![endif]-->
+                    </td>
+                </tr>
+
             </table>
 
         </div>
