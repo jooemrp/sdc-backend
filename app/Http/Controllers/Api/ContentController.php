@@ -90,7 +90,7 @@ class ContentController extends Controller
         $input = $request->all();
 
         if (NewsletterSubscriber::where('email', $input['email'])->exists()) {
-            return response()->json(['message' => 'Already downloaded E-book'], 200);
+            return response()->json(['message' => 'Already downloaded E-book', 'status_code' => 201], 201);
         }
 
         // Record email and send e-book
@@ -105,15 +105,16 @@ class ContentController extends Controller
         }
 
         $sendMail = $this->sendMail($input, $filePath);
-        if ($sendMail) {
-            NewsletterSubscriber::create([
-                'name' => $input['name'],
-                'email' => $input['email'],
-                'company' => $input['company']
-            ]);
-        }
 
-        return response()->json(['message' => 'E-book sent to your email!'], 200);
+        // if (!NewsletterSubscriber::where('email', $input['email'])->exists()) {
+        NewsletterSubscriber::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'company' => $input['company']
+        ]);
+        // }
+
+        return response()->json(['message' => 'E-book sent to your email!', 'status_code' => 200], 200);
     }
 
     private function sendMail($data, $file)
