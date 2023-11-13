@@ -176,9 +176,9 @@
                                             <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
                                                 <tbody>
                                                     <tr>
-                                                        <td style="width:64px;">
+                                                        <td style="height:55px;">
 
-                                                            <img height="auto" src="{{ asset('logo-sips-full.png') }}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="64" />
+                                                            <img height="auto" src="{{ asset('logo-sips-full.png') }}" style="border:0;display:block;outline:none;text-decoration:none;height:100%;" height="55" />
 
                                                         </td>
                                                     </tr>
