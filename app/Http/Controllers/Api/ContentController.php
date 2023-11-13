@@ -95,11 +95,13 @@ class ContentController extends Controller
 
         // Record email and send e-book
         $filePath = null;
-        $title = '';
+        $input['title'] = '';
         $content = Content::where('slug', $input['slug'])->firstOrFail();
         if ($content->id == 32) {
             $input['title'] = 'Panduan Anda memulai strategi digital marketing';
             $filePath = public_path('attachments/[ebook] SIPS Digital Creative.pdf');
+        } else {
+            return response()->json(['message' => 'Error'], 404);
         }
 
         $sendMail = $this->sendMail($input, $filePath);
@@ -119,7 +121,7 @@ class ContentController extends Controller
         try {
             Mail::send('mail.download-content-ebook', $data, function ($message) use ($data, $file) {
                 $message->to($data["email"])
-                    ->from(config('app.url'), config('app.name'))
+                    ->from(config('mail.from.address'), config('mail.from.name'))
                     ->subject($data["title"])
                     ->attach($file);
             });
