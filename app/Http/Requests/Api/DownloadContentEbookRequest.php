@@ -26,7 +26,8 @@ class DownloadContentEbookRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
-            'company' => ['required', 'string', 'max:255']
+            'company' => ['required', 'string', 'max:255'],
+            'phone' => ['nullable', 'numeric', 'min:10', 'max:20']
         ];
     }
 

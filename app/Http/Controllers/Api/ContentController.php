@@ -101,7 +101,7 @@ class ContentController extends Controller
             $input['title'] = 'Panduan Anda memulai strategi digital marketing';
             $filePath = public_path('attachments/[ebook] SIPS Digital Creative.pdf');
         } else {
-            return response()->json(['message' => 'Error - ' . $content->id], 404);
+            return response()->json(['message' => 'Error - '], 404);
         }
 
         $sendMail = $this->sendMail($input, $filePath);
@@ -110,7 +110,8 @@ class ContentController extends Controller
         NewsletterSubscriber::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'company' => $input['company']
+            'company' => $input['company'],
+            'phone' => $input['phone'] ?? null
         ]);
         // }
 
