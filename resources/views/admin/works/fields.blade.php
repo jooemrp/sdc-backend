@@ -80,7 +80,7 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
         <div class="form-group">
             <label>Thumbnail *</label>
-            <input type="file" onchange="document.getElementById('file-custom-label').innerHTML = this.files[0].name" style="display:none;" id="file-custom" aria-label="File browser example" name="thumbnail" accept="image/png, image/jpeg, image/jpg">
+            <input type="file" onchange="document.getElementById('file-custom-label').innerHTML = this.files[0].name" style="display:none;" id="file-custom" aria-label="File browser example" name="thumbnail" accept=".png, .jpg, .jpeg, .webp">
             <label for="file-custom" type="button" id="file-custom-label" class="btn btn-primary form-control" id="upload">{{ isset($data) ? 'Replace' : 'Upload' }}</label>
             @if (isset($data) && $data->img_url)
             <a href="{{ $data->img_url }}" target="_blank">View</a>
@@ -98,7 +98,7 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
         <div class="form-group">
             <label>File </label>
-            <input type="file" onchange="document.getElementById('file-custom-2-label').innerHTML = `Selected ${this.files.length} files`" style="display:none;" id="file-custom-2" aria-label="File browser example" name="content[]" accept="image/png, image/jpeg, image/jpg" multiple>
+            <input type="file" onchange="document.getElementById('file-custom-2-label').innerHTML = `Selected ${this.files.length} files`" style="display:none;" id="file-custom-2" aria-label="File browser example" name="content[]" accept=".png, .jpg, .jpeg, .webp" multiple>
             {{-- TO DO: show content list --}}
             <label for="file-custom-2" type="button" id="file-custom-2-label" class="btn btn-primary form-control" id="upload">Upload</label>
             @if (isset($data) && $data->getMedia('Work_content')->count() > 0)

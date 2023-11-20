@@ -25,7 +25,7 @@ class ContentRequest extends FormRequest
             'title' => 'required|max:255',
             'type' => 'required',
             'body' => 'required',
-            'file' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'file' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'meta_title' => 'required',
             'meta_description' => 'required',
 
@@ -34,7 +34,7 @@ class ContentRequest extends FormRequest
         ];
 
         if (!is_null(request()->file('file'))) {
-            $rules['file'] = 'image|mimes:jpeg,png,jpg|max:512';
+            $rules['file'] = 'image|mimes:jpeg,png,jpg,webp|max:512';
         }
 
         return $rules;

@@ -62,7 +62,7 @@
 						<div class="image-input-wrapper" style="height: 220px; width: 100%"></div>
 						<label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change Cover">
 							<i class="fa fa-pen icon-sm text-muted"></i>
-							<input type="file" name="file" accept=".png, .jpg, .jpeg">
+							<input type="file" name="file" accept=".png, .jpg, .jpeg, .webp">
 							<input type="hidden" name="profile_avatar_remove">
 						</label>
 						<span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="" data-original-title="Cancel Cover">
