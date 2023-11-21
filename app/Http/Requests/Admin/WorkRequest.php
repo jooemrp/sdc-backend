@@ -24,7 +24,7 @@ class WorkRequest extends FormRequest
         $rules = [
             'title' => 'required|max:255',
             'slug' => 'required|max:255',
-            'category' => 'required|max:255',
+            'category' => 'nullable|max:255',
             'color' => 'nullable|max:255',
             'preview' => 'required',
             'challenge' => 'required',

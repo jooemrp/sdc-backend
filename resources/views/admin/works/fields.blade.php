@@ -13,13 +13,8 @@
     </div>
 
     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
-        <label>Category *</label>
-        <select name="category" id="category" class="form-control">
-            <option value="">-- Select category --</option>
-            <option value="Content Creation" {{ isset($data) && $data->category == 'Content Creation' ? 'selected' : '' }}>Content Creation</option>
-            <option value="Paid Marketing" {{ isset($data) && $data->category == 'Paid Marketing' ? 'selected' : '' }}>Paid Marketing</option>
-            <option value="Content Marketing" {{ isset($data) && $data->category == 'Content Marketing' ? 'selected' : '' }}>Content Marketing</option>
-        </select>
+        <label>Category</label>
+        <input type="text" value="{{ $data->category ?? old('category') }}" class="form-control" placeholder="Paid Marketing, Content Creation, Content Marketing or etc" name="category" />
         <span class="form-text text-danger">
             @error('category')
             {{ $message }}
