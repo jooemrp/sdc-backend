@@ -35,7 +35,8 @@ Route::group([
     'prefix' => 'admin',
     'middleware' => [
         'role:admin',
-        'auth'
+        'auth',
+        'log'
     ]
 ], function () {
 

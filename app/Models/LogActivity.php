@@ -42,7 +42,6 @@ class LogActivity extends Model
         $log['ip'] = Request::ip();
         $log['agent'] = Request::header('user-agent');
 
-        dd(self::create($log));
         return self::create($log);
     }
 
