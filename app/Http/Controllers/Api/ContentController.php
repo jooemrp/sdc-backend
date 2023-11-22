@@ -7,6 +7,7 @@ use App\Http\Requests\Api\DownloadContentEbookRequest;
 use App\Http\Requests\Api\NewsletterRequest;
 use App\Http\Resources\Api\ContentResource;
 use App\Models\Content;
+use App\Models\LogActivity;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -28,6 +29,7 @@ class ContentController extends Controller
             ->paginate($request->per_page ?? 10)
             ->appends(request()->input());
 
+        LogActivity::add('API Content List');
         return ContentResource::collection($content);
     }
 
@@ -55,6 +57,7 @@ class ContentController extends Controller
         $content = Content::where('id', $id)->orWhere('slug', $id)->first();
         $content->update(['views' =>  $content->views + 1]);
 
+        LogActivity::add('API Content Detail');
         return ContentResource::make($content);
     }
 
@@ -115,6 +118,7 @@ class ContentController extends Controller
         ]);
         // }
 
+        LogActivity::add('API Download E-book');
         return response()->json(['message' => 'E-book sent to your email!', 'status_code' => 200], 200);
     }
 

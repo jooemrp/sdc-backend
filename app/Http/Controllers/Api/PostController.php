@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\WorkResource;
+use App\Models\LogActivity;
 
 class PostController extends Controller
 {
@@ -14,6 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        LogActivity::add('API Works List');
+
         $posts = Post::paginate(10);
         return WorkResource::collection($posts);
     }
@@ -39,6 +42,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        LogActivity::add('API Works Detail');
+
         $post = Post::where('id', $id)->orWhere('slug', $id)->first();
         return WorkResource::make($post);
     }

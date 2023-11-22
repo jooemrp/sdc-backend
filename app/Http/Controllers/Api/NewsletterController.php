@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\NewsletterRequest;
+use App\Models\LogActivity;
 use App\Models\NewsletterSubscriber;
 use Spatie\Newsletter\Facades\Newsletter;
 use Mail;
@@ -34,6 +35,7 @@ class NewsletterController extends Controller
         NewsletterSubscriber::create(['email' => $request->email]);
         // }
 
+        LogActivity::add('API Subscribe Newsletter');
         return response()->json(['message' => 'Succesfully subscribed to newsletters'], 200);
     }
 
