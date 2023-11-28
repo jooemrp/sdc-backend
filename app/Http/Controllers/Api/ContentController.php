@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\DownloadContentEbookRequest;
 use App\Http\Requests\Api\NewsletterRequest;
 use App\Http\Resources\Api\ContentResource;
+use App\Models\Contact;
 use App\Models\Content;
 use App\Models\LogActivity;
-use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -92,7 +92,7 @@ class ContentController extends Controller
     {
         $input = $request->all();
 
-        if (NewsletterSubscriber::where('email', $input['email'])->exists()) {
+        if (Contact::where('email', $input['email'])->exists()) {
             return response()->json(['message' => 'Already downloaded E-book', 'status_code' => 201], 201);
         }
 
@@ -109,14 +109,13 @@ class ContentController extends Controller
 
         $sendMail = $this->sendMail($input, $filePath);
 
-        // if (!NewsletterSubscriber::where('email', $input['email'])->exists()) {
-        NewsletterSubscriber::create([
+        Contact::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'company' => $input['company'],
-            'phone' => $input['phone'] ?? null
+            'phone' => $input['phone'] ?? null,
+            'description' => 'Download E-book ' . $input['title']
         ]);
-        // }
 
         LogActivity::add('API Download E-book');
         return response()->json(['message' => 'E-book sent to your email!', 'status_code' => 200], 200);

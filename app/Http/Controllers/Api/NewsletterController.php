@@ -18,6 +18,8 @@ class NewsletterController extends Controller
      */
     public function subscribe(NewsletterRequest $request)
     {
+        return response()->json(['message' => 'Error'], 401);
+
         if (
             Newsletter::isSubscribed($request->email)
             && NewsletterSubscriber::where('email', $request->email)->exists()

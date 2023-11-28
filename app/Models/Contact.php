@@ -6,14 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class NewsletterSubscriber extends Model
+class Contact extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public $table = 'contacts';
 
     protected $fillable = [
         'name',
         'email',
-        'email_verified_at',
+        'company',
+        'phone',
+        'message',
+        'description',
+        'read_by'
     ];
 
     public static function boot()
