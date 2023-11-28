@@ -75,5 +75,8 @@ Route::group([
     Route::get('/content/selected/{id}', [App\Http\Controllers\Admin\ContentController::class, 'selectedUpdate'])->name('content.selected.update');
     Route::resource('content', App\Http\Controllers\Admin\ContentController::class);
 
+    Route::resource('contact', App\Http\Controllers\Admin\ContactController::class);
+    Route::get('/contact/export', [App\Http\Controllers\Admin\ContactController::class, 'export'])->name('contact.export');
+
     Route::resource('file-manager', App\Http\Controllers\Admin\MediaFileController::class);
 });

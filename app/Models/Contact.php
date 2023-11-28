@@ -22,6 +22,11 @@ class Contact extends Model
         'read_by'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'read_by', 'id');
+    }
+
     public static function boot()
     {
         parent::boot();

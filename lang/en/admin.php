@@ -52,6 +52,7 @@ return [
         'quiz' => 'Quiz',
         'language' => 'Language',
         'type' => 'Type',
+        'contact' => 'Contact'
     ],
 
     'general' => [
