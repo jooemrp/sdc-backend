@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Excel;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Exports\ContactExport;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -71,6 +73,8 @@ class ContactController extends Controller
 
     public function export()
     {
-        //
+        $filename = "Contacts.xlsx";
+
+        return Excel::download(new ContactExport(), $filename);
     }
 }
