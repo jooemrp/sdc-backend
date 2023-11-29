@@ -16,19 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return response()->json(['message' => 'Halo!']);
+    if (auth()->check())
+        return redirect()->route('admin.home');
+
+    return response()->json(['message' => 'Hello!']);
 })->name('user.home');
 
 Auth::routes();
-
-
-// Route::get('/works', [PostController::class, 'index']);
-// Route::get('/works/create', [PostController::class, 'create']);
-// Route::get('/works/{id}/edit', [PostController::class, 'edit']);
-// Route::put('/works/{id}', [PostController::class, 'update']);
-// Route::delete('/works/{id}', [PostController::class, 'destroy']);
-// Route::post('/works/save', [PostController::class, 'save']);
-
 
 Route::group([
     'as' => 'admin.',
