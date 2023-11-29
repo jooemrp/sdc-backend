@@ -66,9 +66,13 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Contact $contact)
     {
-        //
+        $data = $contact->delete();
+
+        session()->flash('sukses', trans('admin.message.success'));
+
+        return redirect(route('admin.contact.index'));
     }
 
     public function export()

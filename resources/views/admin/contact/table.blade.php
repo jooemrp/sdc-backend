@@ -35,6 +35,7 @@
                             <li class="nav-item">
                                 <form id="formDelete[{{ $item->id }}]" method="POST" action="{{ route('admin.contact.destroy', $item->id) }}">
                                     @csrf
+                                    @method('DELETE')
                                     <input type="hidden" name="id" value="{{ $item->id }}">
                                 </form>
                                 <a class="nav-link deleteButton" onclick="deleteFunction({{ $item->id }})">
