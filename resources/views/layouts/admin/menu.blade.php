@@ -99,6 +99,7 @@
     </a>
 </li>
 
+@if (auth()->user()->hasRole('superadmin'))
 <li class="menu-section mt-0">
     <h4 class="menu-text">User & Role</h4>
     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -133,3 +134,4 @@
         </ul>
     </div>
 </li>
+@endif
