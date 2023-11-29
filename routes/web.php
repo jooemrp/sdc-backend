@@ -36,6 +36,9 @@ Route::group([
 
     Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
+    Route::get('/account', [App\Http\Controllers\Admin\AccountController::class, 'index'])->name('account.index');
+    Route::post('/account', [App\Http\Controllers\Admin\AccountController::class, 'update'])->name('account.update');
+
     Route::resource('works', App\Http\Controllers\Admin\PostController::class);
     Route::delete('/works/remove-media/{id}/{mediaKey}', [App\Http\Controllers\Admin\PostController::class, 'removeMedia'])->name('works.media.remove');
 

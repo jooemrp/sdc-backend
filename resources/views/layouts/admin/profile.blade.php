@@ -63,6 +63,10 @@
                             @csrf
                         </form>
 
+                        <a class="btn btn-sm mx-1 btn-light-primary font-weight-bolder py-2 px-5" href="{{ route('admin.account.index') }}">
+                            Account
+                        </a>
+
                         <a class="btn btn-sm mx-1 btn-light-primary font-weight-bolder py-2 px-5" href="{{ route('user.home') }}" target="_blank">
                             Homepage
                         </a>

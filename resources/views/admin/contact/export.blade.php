@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>No</th>
+            <th>Date</th>
             <th>Name</th>
             <th>Company</th>
             <th>Phone</th>
@@ -13,6 +14,7 @@
         @foreach ($data as $item)
         <tr>
             <td>{{ $loop->iteration }}</td>
+            <td>{{ $item->created_at }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->company }}</td>
             <td>{{ $item->phone }}</td>

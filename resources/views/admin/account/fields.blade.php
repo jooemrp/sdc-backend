@@ -30,7 +30,8 @@
         </div>
     </div>
 </div>
-{{-- <div class="form-group row">
+{{--
+<div class="form-group row">
     <label class="col-form-label col-lg-3 col-sm-3 col-3 text-right">Avatar *</label>
     <div class="col-lg-9 col-md-9 col-sm-9 col-9">
         <div class="image-input image-input-empty image-input-outline" id="kt_user_edit_avatar" style="background-image: url('{{ ( isset($data->avatar_url) && $data->avatar_url != NULL ? asset('storage/' .$data->avatar_url) : asset('user.svg')) }}')">
@@ -57,27 +58,6 @@
         </div>
     </div>
 </div> --}}
-
-<hr>
-
-<div class="form-group row">
-    <label class="col-form-label col-lg-3 col-sm-3 col-3 text-right">Role *</label>
-    <div class="col-lg-9 col-md-9 col-sm-9 col-9">
-        <div class="input-group">
-            <select class="form-control select2 col-9" id="kt_select2_102" name="role[]" multiple="multiple">
-                <option></option>
-                @foreach (App\Models\Role::all() as $item)
-                <option @php if (isset($data)) { foreach(App\Models\User::find($data->id)->getRoleNames() as $role) { if
-                    ($role == $item->name){ echo "selected"; }}} @endphp
-                    value="{{ $item->id }}">
-                    {{ $item->name }}
-                </option>
-                @endforeach
-            </select>
-            <span class="form-text text-muted"></span>
-        </div>
-    </div>
-</div>
 
 @push('page_style')
 <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
