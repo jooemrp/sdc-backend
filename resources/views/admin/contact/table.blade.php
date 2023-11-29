@@ -1,9 +1,9 @@
-<table class="table table-separate table-head-custom collapsed" id="myDatatable">
+<table class="table table-separate table-head-custom collapsed" id="kt_datatable">
     <thead>
         <tr>
-            <th class="w-25px">No</th>
+            <th>No</th>
             <th>Date</th>
-            <th class="w-250px">Name</th>
+            <th>Name</th>
             <th>Company</th>
             <th>Phone</th>
             <th>Last Opened By</th>
