@@ -31,7 +31,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($user->logs as $key => $log)
+                            @foreach ($user->logs as $key => $log)
                             <tr>
                                 <td>
                                     {{ $key+1 }}
@@ -50,7 +50,7 @@
                                     {{ $log->created_at }}
                                 </td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr class="text-left text-uppercase">
