@@ -103,6 +103,9 @@ class ContentController extends Controller
         if ($content->id == 32) {
             $input['title'] = 'Panduan Anda memulai strategi digital marketing';
             $filePath = public_path('attachments/[ebook] SIPS Digital Creative.pdf');
+        } elseif ($content->id == 53) {
+            $input['title'] = 'BRAND STRATEGY TOOLKIT';
+            $filePath = public_path('attachments/[ebook] SIPS Digital Creative Brand Strategy Toolkit.pdf');
         } else {
             return response()->json(['message' => 'Error - '], 404);
         }
