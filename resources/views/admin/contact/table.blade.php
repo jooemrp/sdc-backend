@@ -4,7 +4,6 @@
             <th>No</th>
             <th>Date</th>
             <th>Name</th>
-            <th>Email</th>
             <th>Company</th>
             <th>Phone</th>
             <th>Last Opened By</th>
@@ -17,7 +16,6 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item->created_at }}</td>
             <td>{{ $item->name }}</td>
-            <td>{{ $item->email }}</td>
             <td>{{ $item->company }}</td>
             <td>{{ $item->phone }}</td>
             <td>{{ $item->user?->name }}</td>
@@ -58,7 +56,6 @@
             <th>No</th>
             <th>Date</th>
             <th>Name</th>
-            <th>Email</th>
             <th>Company</th>
             <th>Phone</th>
             <th>Last Opened By</th>
