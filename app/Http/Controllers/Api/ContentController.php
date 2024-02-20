@@ -92,9 +92,9 @@ class ContentController extends Controller
     {
         $input = $request->all();
 
-        if (Contact::where('email', $input['email'])->exists()) {
-            return response()->json(['message' => 'Already downloaded E-book', 'status_code' => 201], 201);
-        }
+        // if (Contact::where('email', $input['email'])->exists()) {
+        //     return response()->json(['message' => 'Already downloaded E-book', 'status_code' => 201], 201);
+        // }
 
         // Record email and send e-book
         $filePath = null;
