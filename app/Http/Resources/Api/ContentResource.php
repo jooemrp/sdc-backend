@@ -23,7 +23,7 @@ class ContentResource extends JsonResource
             $data['contents'][] = $content->getUrl();
         }
 
-        $ebook_available = [32, 53];
+        $ebook_available = [32, 53, 71];
         $data['is_ebook_available'] = in_array($this->id, $ebook_available) ? true : false;
 
         return $data;

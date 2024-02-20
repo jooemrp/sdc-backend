@@ -106,6 +106,9 @@ class ContentController extends Controller
         } elseif ($content->id == 53) {
             $input['title'] = 'BRAND STRATEGY TOOLKIT';
             $filePath = public_path('attachments/[ebook] SIPS Digital Creative Brand Strategy Toolkit.pdf');
+        } elseif ($content->id == 71) {
+            $input['title'] = 'Ramadan Marketing 2024';
+            $filePath = public_path('attachments/[ebook] Ramadan Marketing 2024.pdf');
         } else {
             return response()->json(['message' => 'Error - '], 404);
         }
