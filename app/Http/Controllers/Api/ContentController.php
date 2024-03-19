@@ -109,6 +109,9 @@ class ContentController extends Controller
         } elseif ($content->id == 71) {
             $input['title'] = 'Ramadan Marketing 2024';
             $filePath = public_path('attachments/[ebook] Ramadan Marketing 2024.pdf');
+        } elseif ($content->id == 85) {
+            $input['title'] = 'White Paper HCP Engagement';
+            $filePath = public_path('attachments/White Paper HCP Engagement.pdf');
         } else {
             return response()->json(['message' => 'Error - '], 404);
         }
