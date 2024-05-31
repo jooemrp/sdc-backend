@@ -28,6 +28,7 @@ class ContentRequest extends FormRequest
             'file' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
             'meta_title' => 'required',
             'meta_description' => 'required',
+            'meta_keywords' => 'required',
 
             'status' => 'required|in:0,1',
             'slug' => 'required|max:255|unique:contents,slug' . (request('content') ? ',' . request('content') : ''),

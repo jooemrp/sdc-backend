@@ -141,7 +141,14 @@
     </div>
 </div>
 
-
+<div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-3 col-3 text-right">{{ trans('admin.panel.meta.keywords') }}</label>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-9">
+        <div class="input-group">
+            <input type="text" class="form-control col-9" placeholder="Write your meta keywords here, this is how you keywords a meta tags, anything else you want to write" name="meta_keywords" value="{{ $data->meta_keywords ?? old('meta_keywords') }}" />
+        </div>
+    </div>
+</div>
 
 @push('page_style')
 <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />

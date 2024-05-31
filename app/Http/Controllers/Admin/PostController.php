@@ -36,6 +36,7 @@ class PostController extends Controller
             'result' => $input['result'],
             'meta_title' => $input['meta_title'],
             'meta_description' => $input['meta_description'],
+            'meta_keywords' => $input['meta_keywords'],
         ]);
 
         if (!is_null($request->file('thumbnail'))) {
@@ -77,6 +78,7 @@ class PostController extends Controller
             'result' => $input['result'],
             'meta_title' => $input['meta_title'],
             'meta_description' => $input['meta_description'],
+            'meta_keywords' => $input['meta_keywords'],
         ]);
 
         if (!is_null($request->file('thumbnail'))) {
